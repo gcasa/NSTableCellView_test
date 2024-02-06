@@ -28,5 +28,17 @@
     return YES;
 }
 
+// Data source
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    return [[NSTextField alloc] initWithFrame: NSMakeRect(0, 0, 50, 10)];
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return 2;
+}
+
+// Delegate
 
 @end
