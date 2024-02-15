@@ -10,6 +10,8 @@
 @interface AppDelegate ()
 
 @property (strong) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSTableView *tableView;
+
 @end
 
 @implementation AppDelegate
@@ -28,6 +30,11 @@
     return YES;
 }
 
+- (IBAction) reload: (id)sender
+{
+    [self.tableView reloadData];
+}
+
 // Data source
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
@@ -35,10 +42,8 @@
 }
 
 // Delegate
-/*
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
   return [[NSTextField alloc] initWithFrame: NSMakeRect(0, 0, 50, 10)];
 }
-*/
 @end
