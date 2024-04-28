@@ -18,6 +18,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    NSTableRowView *rv = [self.tableView rowViewAtRow: 0 makeIfNecessary:NO];
+    NSLog(@"rv = %@, subviews = %@", rv, rv.subviews);
 }
 
 
@@ -46,4 +48,12 @@
 {
   return [[NSTextField alloc] initWithFrame: NSMakeRect(0, 0, 50, 10)];
 }
+
+- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
+{
+    NSTableRowView *rowView = [[NSTableRowView alloc] init];
+    NSLog(@"rowView from delegate => %@", rowView);
+    return rowView;
+}
+
 @end
